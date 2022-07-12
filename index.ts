@@ -5,18 +5,35 @@ const numbers: string = "0123456789";
 const sizes: string[] = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 const logBase: number = Math.log(1024);
 
-export function generateID(len: number, numberOnly: boolean, upperCaseOnly: boolean, lowerCaseOnly: boolean): string {
-    if (len <= 0) {
-        throw new TypeError("Length must be greater than 0.");
+export enum IDType {
+    NumberOnly,
+    UpperCaseOnly,
+    LowerCaseOnly,
+}
+
+export function generateID(len: number, type: IDType | undefined): string {
+    if (!Number.isSafeInteger(len) || len <= 0) {
+        throw new TypeError("Invalid length.");
     }
 
-    if (numberOnly === true) return randomBytes(len).reduce((a, b) => a + numbers[Math.floor((b * numbers.length) / 0xFF)], "");
-    if (upperCaseOnly === true) return randomBytes(len).reduce((a, b) => a + upperCase[Math.floor((b * upperCase.length) / 0xFF)], "");
-    if (lowerCaseOnly === true) return randomBytes(len).reduce((a, b) => a + lowerCase[Math.floor((b * lowerCase.length) / 0xFF)], "");
-
-    const ids: string = upperCase + lowerCase + numbers;
-    
-    return randomBytes(len).reduce((a, b) => a + ids[Math.floor((b * ids.length) / 0xFF)], "");
+    switch (type) {
+        case IDType.NumberOnly: {
+            return randomBytes(len).reduce((a, b) => a + numbers[Math.floor((b * numbers.length) / 0xFF)], "");
+        }
+            
+        case IDType.UpperCaseOnly: {
+            return randomBytes(len).reduce((a, b) => a + upperCase[Math.floor((b * upperCase.length) / 0xFF)], "");
+        }
+            
+        case IDType.LowerCaseOnly: {
+            return randomBytes(len).reduce((a, b) => a + lowerCase[Math.floor((b * lowerCase.length) / 0xFF)], "");
+        }
+            
+        default: {
+            const ids: string = upperCase + lowerCase + numbers;
+            return randomBytes(len).reduce((a, b) => a + ids[Math.floor((b * ids.length) / 0xFF)], "");       
+        }
+    }
 }
 
 export function toCapital(text: string): string {
