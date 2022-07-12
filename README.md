@@ -1,7 +1,7 @@
 # 🪴 FFEU - Functions For Everyday Use!
 ### *This package features various, useful functions that can be used in many scenarios!*
 
-### generateID(number, boolean, boolean, boolean) -> String
+### generateID(number, IDType) -> String
 This function generates a randomized string of characters with the provided length.
 
 > It has 4 different modes: "numberOnly", "upperCaseOnly", "lowerCaseOnly" and "default"
