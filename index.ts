@@ -6,6 +6,7 @@ const sizes: string[] = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'
 const logBase: number = Math.log(1024);
 
 export enum IDType {
+    Default,
     NumberOnly,
     UpperCaseOnly,
     LowerCaseOnly,
