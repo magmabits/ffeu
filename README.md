@@ -6,10 +6,12 @@ This function generates a randomized string of characters with the provided leng
 
 > It has 4 different modes: "numberOnly", "upperCaseOnly", "lowerCaseOnly" and "default"
 ```ts
+import { generateID, IDType } from "ffeu";
+
 generateID(8) // "4h7s45ef", mode is "default"
-generateID(8, true) // "23461862", mode is "numberOnly"
-generateID(8, false, true) // "AXDVASVW", mode is "upperCaseOnly"
-generateID(8, false, false, true) // "sdfewnzd", mode is "lowerCaseOnly"
+generateID(8, IDType.NumberOnly) // "23461862", mode is "numberOnly"
+generateID(8, IDType.UpperCaseOnly) // "AXDVASVW", mode is "upperCaseOnly"
+generateID(8, IDType.LowerCaseOnly) // "sdfewnzd", mode is "lowerCaseOnly"
 
 ```
 
