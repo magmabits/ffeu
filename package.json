@@ -1,8 +1,9 @@
 {
   "name": "ffeu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A package filled with various, useful functions!",
   "main": "index.ts",
+  "type": "module",
   "module": "es2022",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
