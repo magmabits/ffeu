@@ -17,15 +17,15 @@ export function generateID(len: number, type: IDType | undefined): string {
     }
 
     switch (type) {
-        case NumberOnly: {
+        case IDType.NumberOnly: {
             return randomBytes(len).reduce((a, b) => a + numbers[Math.floor((b * numbers.length) / 0xFF)], "");
         }
             
-        case UpperCaseOnly: {
+        case IDType.UpperCaseOnly: {
             return randomBytes(len).reduce((a, b) => a + upperCase[Math.floor((b * upperCase.length) / 0xFF)], "");
         }
             
-        case LowerCaseOnly: {
+        case IDType.LowerCaseOnly: {
             return randomBytes(len).reduce((a, b) => a + lowerCase[Math.floor((b * lowerCase.length) / 0xFF)], "");
         }
             
