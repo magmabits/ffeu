@@ -1,0 +1,24 @@
+{
+  "name": "ffeu",
+  "version": "1.0.0",
+  "description": "A package filled with various, useful functions!",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "magmabits",
+  "license": "MIT",
+  "keywords": [
+    "functions",
+    "useful",
+    "time since",
+    "ordinal",
+    "random id",
+    "random ID",
+    "bytes",
+    "to capital"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.0.3"
+  }
+}
