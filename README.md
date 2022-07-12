@@ -36,7 +36,7 @@ toOrdinal(33) // "33rd"
 toOrdinal(4) // "4th"
 ```
 
-### timeSince(date) -> String
+### timeSince(timestamp || date) -> String
 This function returns the time that has elapsed since the start of the function and the provided time.
 ```ts
 timeSince(1657621049) // "39 seconds ago"
