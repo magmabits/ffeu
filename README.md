@@ -8,7 +8,7 @@ This function generates a randomized string of characters with the provided leng
 ```ts
 import { generateID, IDType } from "ffeu";
 
-generateID(8, IDType.Default) // "4h7s45ef"
+generateID(8) // "4h7s45ef"
 generateID(8, IDType.NumberOnly) // "23461862"
 generateID(8, IDType.UpperCaseOnly) // "AXDVASVW"
 generateID(8, IDType.LowerCaseOnly) // "sdfewnzd"

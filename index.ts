@@ -6,13 +6,12 @@ const sizes: string[] = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'
 const logBase: number = Math.log(1024);
 
 export enum IDType {
-    Default,
     NumberOnly,
     UpperCaseOnly,
     LowerCaseOnly,
 }
 
-export function generateID(len: number, type: IDType | undefined): string {
+export function generateID(len: number, type?: IDType | undefined): string {
     if (!Number.isSafeInteger(len) || len <= 0) {
         throw new TypeError("Invalid length.");
     }
