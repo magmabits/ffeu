@@ -1,5 +1,7 @@
 # 🪴 FFEU - Functions For Everyday Use!
-### *This package features various, useful functions that can be used in many scenarios!*
+#### This package features various useful functions that can be used in many scenarios*
+#### *Contribute to this project here https://github.com/magmabits/ffeu*
+---
 
 ### generateID(number, IDType) -> String
 This function generates a randomized string of characters with the provided length.
